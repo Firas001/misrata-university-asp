@@ -1,0 +1,354 @@
+@font-face {
+    font-family: tajawal;
+    src: url(../fonts/ArbFONTS-Tajawal-Regular.ttf);
+}
+
+:root {
+    --black: rgb(22, 22, 22);
+    --orange: #F79F1F;
+    --light-orange: #f7a11f1e;
+    --text-color-1: #444;
+    --text-color-2: #666;
+    --bg-color-1: #fff;
+    --bg-color-2: #eee;
+    --card-color-1: #333;
+    --card-color-2: #fff;
+    --box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
+}
+
+
+html::-webkit-scrollbar{
+    width:10px;
+}
+
+html::-webkit-scrollbar-track{
+    background:transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+    background:var(--orange);
+    border-radius: 30px;
+}
+
+/* اعدادات افتراضية لكل العناصر */
+
+* {
+    font-family: tajawal;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    transition: all .2s linear;
+    direction: rtl;
+    
+}
+
+
+
+body {
+    background: var(--bg-color-1) !important;
+}
+
+    /* Dark mode */
+
+    body.active {
+        --text-color-1: #fff;
+        --text-color-2: #eee;
+        --bg-color-1: #333;
+        --bg-color-2: #222;
+        --box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.4);
+        --black: #fff;
+        --card-color-1: #fff;
+        --card-color-2: #333;
+    }
+
+
+
+h1, h2, h3, h4, h5, h6, p, span, div, label, select, input[type=search], a {
+    color: var(--text-color-1) !important;
+}
+
+
+.bg-dark h3, .bg-white h3, .bg-dark p, .bg-white p {
+    color: var(--card-color-1) !important;
+}
+
+
+.bk-card h3, .bk-card p {
+    color: var(--card-color-2) !important; 
+}
+
+.carousel-caption p, .carousel-caption h5, .badge {
+    color: #fff !important;
+}
+
+.form-color{
+    color: var(--text-color-1) !important;
+}
+
+tr:nth-of-type(even) > *, tr:nth-of-type(odd) > * {
+    color: var(--text-color-1) !important;
+}
+
+.form-group select {
+    color: #333 !important;
+}
+/*////*/
+.heading {
+    margin-top: 50px;
+    text-align: center;
+    padding-bottom: 20px;
+    color: var(--text-color-1);
+}
+
+.heading span{
+    position: relative;
+    z-index: 0;
+}
+
+.heading span::before{
+    content: '';
+    position: absolute;
+    bottom: 10px;
+	left: 0;
+    z-index: -1;
+    background: var(--orange);
+    height: 100%;
+    width: 100%;
+    clip-path: polygon(0 90%, 100% 83%, 100% 100%, 0% 100%);
+}
+
+
+.header{
+    
+    position: fixed;
+    top:0; left:0; right:0;
+    background:var(--bg-color-1);
+    box-shadow: var(--box-shadow);
+    padding: 15px 7%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .hello{
+    /* font-weight: bolder; */
+    font-size: 30px;
+    color:var(--text-color-1);
+    margin: 10px;
+    text-decoration: none;
+}
+
+.header .logo img{
+    border: 1px solid black;
+    height: 60px;
+}
+
+
+
+.header .icons div{
+    height: 45px;
+    width: 45px;
+    line-height: 45px;
+    font-size: 20px;
+    border-radius: 5px;
+    margin-left: 5px;
+    background:var(--bg-color-2);
+    color:var(--text-color-1);
+    cursor: pointer;
+    text-align: center;
+}
+
+.header .icons div:hover{
+    color:#fff;
+    background:var(--orange);
+}
+
+.header .navbar{
+    position:absolute;
+    top:115%;
+	right:7%;
+    background:var(--bg-color-1);
+    border-radius: 5px;
+    box-shadow: var(--box-shadow);
+    width:250px;
+    transform:scale(0);
+    transform-origin: top right;
+	display: block;
+}
+
+.header .navbar.active{
+    transform:scale(1);
+}
+
+.header .navbar .list{
+    display:block;
+    margin: 10px;
+    padding: 10px;
+    font-size: 15px;
+    color:var(--text-color-1);
+    border-radius: 5px;
+	text-decoration: none;
+}
+
+    .header .navbar .active {
+        color: var(--orange) !important;
+    }
+
+.header .navbar .list:hover{
+    color:var(--orange);
+    background:var(--bg-color-2);
+    padding-left: 2rem;
+}
+
+.header .login-form{
+    position:absolute;
+    top:115%;
+	right:7%;
+    background:var(--bg-color-1);
+    border-radius: 5px;
+    box-shadow: var(--box-shadow);
+    width:350px;
+    padding: 20px;
+    transform:scale(0);
+    transform-origin: top right;
+}
+
+.header .login-form.active{
+    transform:scale(1);
+}
+
+.header .login-form .inputBox{
+    margin-bottom: 1rem;
+}
+
+.header .login-form .inputBox span{
+    font-size: 17px;
+    color:var(--text-color-2);
+}
+
+.header .login-form .inputBox input{
+    font-size: 15px;
+    color:var(--text-color-1);
+    border-radius: 5px;
+    padding: 10px;
+    background:var(--bg-color-2);
+    width: 100%;
+    text-transform: none;
+    margin: 5px 0;
+}
+
+.header .login-form .remember{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 0;
+}
+
+.header .login-form .remember label{
+    color:var(--text-color-2);
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.header .login-form .btn{
+    width:100%;
+}
+
+
+
+
+.section-padding {
+	padding: 100px 0;
+}
+.carousel-item {
+	height: 100vh;
+	min-height: 300px;
+}
+/*bottom: 220px;*/
+
+.carousel-caption {
+    bottom: 30%;
+	z-index: 2;
+}
+
+.carousel-caption h5 {
+	font-size: 45px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	margin-top: 25px;
+}
+.carousel-caption p {
+	width: 60%;
+	margin: auto;
+	font-size: 18px;
+	line-height: 1.9;
+}
+.carousel-inner:before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.7);
+	z-index: 1;
+}
+
+
+
+.w-100 {
+	height: 100vh;
+}
+
+.portfolio .card {
+	box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.15);
+}
+.team .card {
+	box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.15);
+}
+.services .card-body i {
+	font-size: 50px;
+}
+.team .card-body i {
+	font-size: 20px;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	.carousel-caption {
+		bottom: 370px;
+	}
+	.carousel-caption p {
+		width: 100%;
+	}
+	.card {
+		margin-bottom: 30px;
+	}
+	.img-area img {
+		width: 100%;
+	}
+}
+@media only screen and (max-width: 767px) {
+	.carousel-caption {
+		bottom: 125px;
+	}
+	.carousel-caption h5 {
+		font-size: 17px;
+	}
+	.carousel-caption a {
+		padding: 10px 15px;
+		font-size: 15px;
+	}
+	.carousel-caption p {
+		width: 100%;
+		line-height: 1.6;
+		font-size: 12px;
+	}
+	.about-text {
+		padding-top: 50px;
+	}
+	.card {
+		margin-bottom: 30px;
+	}
+}
