@@ -102,10 +102,12 @@
                      <div class="col-md-6">
                         <label>كلمة المرور</label>
                         <div class="form-group">
-                           <asp:TextBox class="form-control" ID="TextBox9" runat="server" placeholder="كلمة المرور" TextMode="Password" pattern="(?=.*[a-z])(?=.*[A-Z]).{4,}" title="يجب أن تكون كلمة المرور أربع حروف على الأقل وتحتوي على حرف كبير وحرف صغير"></asp:TextBox>
-
-
-
+                            <asp:TextBox type="password" ID="TextBox9" runat="server" CssClass="form-control"  placeholder="كلمة المرور" TextMode="Password" pattern="(?=.*[a-z])(?=.*[A-Z]).{4,}" title="يجب أن تكون كلمة المرور أربع حروف على الأقل وتحتوي على حرف كبير وحرف صغير"></asp:TextBox>
+                            <asp:RequiredFieldValidator id="RequiredFieldPassword" runat="server"
+                              ControlToValidate="TextBox9"
+                              ErrorMessage="لا يمكن ترك كلمة المرور فارغة."
+                              ForeColor="Red">
+                            </asp:RequiredFieldValidator>
 
                         </div>
                      </div>
