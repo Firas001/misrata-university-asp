@@ -33,6 +33,7 @@
                         <div class="form-group">
                            <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="الاسم الكامل"></asp:TextBox>
                         </div>
+                          
                      </div>
                      <div class="col-md-6">
                         <label>تاريخ الميلاد</label>

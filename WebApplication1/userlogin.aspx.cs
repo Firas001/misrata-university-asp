@@ -32,11 +32,11 @@ namespace WebApplication1
 
                 }
 
-                /// Say good bye for sql injection !!!!!
+                
                 SqlCommand cmd = new SqlCommand("select * from users, roles where (userID=@userID AND password=@password) and (users.RoleID = roles.RoleID)", con);
                 cmd.Parameters.AddWithValue("@userID", TextBox1.Text.Trim());
                 cmd.Parameters.AddWithValue("@password", TextBox2.Text.Trim());
-                /// Say good bye for sql injection !!!!!
+                
 
 
                 SqlDataReader dr = cmd.ExecuteReader();
